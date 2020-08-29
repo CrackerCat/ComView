@@ -1,0 +1,1 @@
+COMView is kind of a COM "explorer". It's able to create assembly language include files from COM type libraries.
