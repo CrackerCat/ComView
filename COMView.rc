@@ -423,16 +423,16 @@ BEGIN
                     WS_TABSTOP,0,0,282,152,WS_EX_CLIENTEDGE
 END
 
-IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 187, 98
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 187, 110
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About COMView"
 FONT 8, "MS Sans Serif"
 BEGIN
-    PUSHBUTTON      "Close",IDCANCEL,68,77,50,14
+    PUSHBUTTON      "Close",IDCANCEL,68,89,50,14
     ICON            IDI_ICON1,IDC_STATIC,16,30,20,20
-    EDITTEXT        IDC_EDIT1,41,10,106,56,ES_CENTER | ES_MULTILINE | 
+    EDITTEXT        IDC_EDIT1,41,10,106,68,ES_CENTER | ES_MULTILINE | 
                     ES_READONLY | NOT WS_BORDER
-    GROUPBOX        "",IDC_STATIC,7,5,173,68
+    GROUPBOX        "",IDC_STATIC,7,5,173,80
 END
 
 IDD_OPTPAGE_PROPERTIES DIALOG DISCARDABLE  0, 0, 241, 169
@@ -1109,8 +1109,8 @@ END
 //
 
 1 VERSIONINFO
- FILEVERSION 2,8,3,0
- PRODUCTVERSION 2,8,3,0
+ FILEVERSION 2,9,13,0
+ PRODUCTVERSION 2,9,13,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -1127,12 +1127,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Andreas Grech\0"
             VALUE "FileDescription", "COMView\0"
-            VALUE "FileVersion", "2, 9, 12, 0\0"
+            VALUE "FileVersion", "2, 9, 13, 0\0"
             VALUE "InternalName", "COMView\0"
-            VALUE "LegalCopyright", "Copyright ©2001- 2011 Japheth\0"
+            VALUE "LegalCopyright", "Copyright ©2001- 2020 Japheth\0"
             VALUE "OriginalFilename", "COMView.exe\0"
             VALUE "ProductName", "COMView\0"
-            VALUE "ProductVersion", "2, 8, 3, 0\0"
+            VALUE "ProductVersion", "2, 9, 13, 0\0"
         END
     END
     BLOCK "VarFileInfo"

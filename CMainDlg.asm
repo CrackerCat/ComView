@@ -4531,8 +4531,10 @@ g_dwHelpCookie	DWORD 0
 				mov dwSize, sizeof szLib
 				invoke RegQueryValueEx,hKey,addr g_szNull,NULL,NULL,addr szLib,addr dwSize
 				.if (eax == ERROR_SUCCESS)
+					invoke ExpandEnvironmentStrings, addr szLib, addr szPath, sizeof szPath
+					invoke lstrcpy, addr szLib, addr szPath
 					invoke LoadLibrary, addr szLib
-					.if (eax > 32)
+					.if (eax)
 						mov g_hLibHHCtrl, eax
 						invoke GetProcAddress, eax, 14
 						mov g_pfnHtmlHelp, eax
@@ -4540,7 +4542,8 @@ g_dwHelpCookie	DWORD 0
 							invoke g_pfnHtmlHelp, NULL, NULL, HH_INITIALIZE, addr g_dwHelpCookie
 						.endif
 					.else
-						invoke wsprintf, addr szPath, CStr("Library",10,"%s",10,"not found"), addr szLib
+						invoke GetLastError
+						invoke wsprintf, addr szPath, CStr("LoadLibrary(",22h,"%s",22h,") error [%X]"), addr szLib, eax
 						lea eax, szPath
 						mov pszError, eax
 					.endif

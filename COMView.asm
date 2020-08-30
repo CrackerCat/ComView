@@ -18,7 +18,7 @@
 	includelib wininet.lib
 
 
-VERSIONSTRING	equ <"2.9.12">
+VERSIONSTRING	equ <"2.9.13">
 
 ;--- year, month, dayofweek, day, hour, minute
 
@@ -26,12 +26,12 @@ COMPILEDATE		equ <{2011,2,,25,14,00}>		;;GMT (CET - 1/2 hours) !!!
 ifdef _DEBUG
 HTTPSERVER		equ <"gra3">
 else
-HTTPSERVER		equ <"www.japheth.de">
+HTTPSERVER		equ <"github.com/Baron-von-Riedesel">
 endif
 
 	.const
 
-g_szCOMViewHttp	db "http://",HTTPSERVER,"/Download/COMView.zip",0
+g_szCOMViewHttp	db "https://",HTTPSERVER,"/ComView/blob/master/Build/comview_win32_v2913.zip",0
 
 	.data
 
@@ -65,8 +65,8 @@ g_szWarning	db "Warning",0
 g_szNull	db 0
 
 g_szAboutText	db 13,10,"COMView Version ",VERSIONSTRING
-				db 13,10, "Copyright Japheth 2001-2010."
-				db 13,10,"http://www.japheth.de"
+				db 13,10, "Copyright Japheth 2001-2020."
+				db 13,10,"https://github.com/Baron-von-Riedesel/ComView"
 				db 13,10
 				db 13,10, "internal Hex Editor written by KetilO 2003"
 				db 13,10

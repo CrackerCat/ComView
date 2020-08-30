@@ -63,7 +63,7 @@ LINK=link.exe $(OBJMODS) $*.res $(LOPTS) $(LOPTDM) $(LIBS)
 LOPTS= op MAP=$*.map
 LINK=jwlink.exe $(LOPTDW) format windows nt runtime windows=4.0 file {$(OBJMODS)} name $*.exe op res=$*.res $(LOPTS) LibPath $(LIBPATH) LibPath Lib Lib {$(LIBS)}
 !endif
-HHC="c:\Programme\HTML Help Workshop\hhc.exe"
+HHC="\HTML_Help_Workshop\hhc.exe"
 
 .SUFFIXES: .asm .obj .rc
 
